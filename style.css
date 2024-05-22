@@ -1,0 +1,8 @@
+html {
+    background-color: black;
+}
+
+svg path {
+    stroke-dashoffset: 210;
+    stroke-dasharray: 210;
+}
