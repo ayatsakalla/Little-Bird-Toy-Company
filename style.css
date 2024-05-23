@@ -1,8 +1,40 @@
 html {
-    background-color: black;
+    background-color: whiteblack;
 }
 
-svg path {
-    stroke-dashoffset: 210;
-    stroke-dasharray: 210;
+svg {
+    width: 200px;
+    position: absolute;
 }
+
+.cls-3 {
+    fill: #fe9553;
+    mask-image: url(Main\ Logo\ SVG.svg);
+    mask-size: 100% 100%;
+    image-rendering: auto; /* or crisp-edges */
+    transform: none; /* ensure no transformations */
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+.cls-4 {
+    fill: none;
+    stroke: white ;
+    stroke-width: 4;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+
+    mask-size: 100% 100%;
+    animation: draw 5s linear forwards;
+}
+
+.birds-container {
+    height: 153px;
+}
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 500;
+    }
+  }
+
