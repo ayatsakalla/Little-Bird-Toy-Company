@@ -1,10 +1,15 @@
-html {
-    background-color: whiteblack;
+html,body {
+    background-color: white;
+    height:100% ;
+    width: 100%;
 }
 
 svg {
     width: 200px;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .cls-3 {
@@ -23,13 +28,14 @@ svg {
     stroke-width: 4;
     stroke-dasharray: 500;
     stroke-dashoffset: 0;
-
+    mask-image: url(Main\ Logo\ SVG.svg);
     mask-size: 100% 100%;
-    animation: draw 5s linear forwards;
+    animation: draw 3s linear forwards;
 }
 
 .birds-container {
-    height: 153px;
+ height: 100%;
+ width: 100%;   
 }
 
   @keyframes draw {
