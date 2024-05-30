@@ -5,6 +5,26 @@ html,body {
     overflow-x: hidden;
 }
 
+/* fonts start */
+@font-face {
+  font-family: 'sugarspice';
+  src: url('Sugar\ &\ Spice\ demo.ttf');
+}
+
+.sugarspice {
+  font-family: 'sugarspice';
+}
+
+@font-face {
+  font-family: 'geliat';
+  src: url('GeliatExtralight-6YLRq.otf');
+}
+
+.geliat {
+  font-family: 'geliat';
+}
+/* fonts end */
+
 /* loading screen start */
 svg {
     width: 200px;
@@ -28,7 +48,7 @@ svg {
   }
 .cls-4 {
     fill: none;
-    stroke: white ;
+    stroke: #FFFBF7 ;
     stroke-width: 4;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
@@ -56,7 +76,7 @@ svg {
     to {
             width: 64px;
             position: absolute;
-            top: 35px;
+            top: 38px;
             left: 37px;
     }
   }
@@ -73,6 +93,7 @@ svg {
   }
   /* loading screen end */
 
+  /* navbar start */
   .container-fluid {
     max-width: 100%;
   }
@@ -82,10 +103,6 @@ svg {
     --bs-navbar-nav-link-padding-x: 2rem;
   }
   
-  .navbar-nav {
-    --bs-nav-link-color: black;
-  }
-
   .navbar-toggler {
     width: 40px;
     height: 40px;
@@ -177,8 +194,97 @@ svg {
   position: relative;
 }
 
+.navbar-nav {
+  --bs-nav-link-hover-color: #FFFBF7;
+  --bs-nav-link-color: #FFFBF7;
+  --bs-nav-link-padding-y: -0.2rem;
+  font-size: 2.3rem;
+}
+
+.nav-link {
+  position: relative;
+  width: fit-content;
+}
+
+.nav-link::after {
+  content: '';
+  height: 3px;
+  width: 100%;
+  transform: scaleX(0);
+  background-color:#FFFBF7 ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
 @media only screen and (min-width: 992px) {
   .dropdown-container {
     position: absolute;
   }
 }
+
+.border-radius {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.border-radius-2 {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.btn-outline-success {
+  --bs-btn-color: #FFFBF7;
+    --bs-btn-border-color: #503B3B;
+    --bs-btn-active-color: #FFFBF7;
+    --bs-btn-active-bg: #503B3B;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-hover-color: #FFFBF7;
+    background-color: #503B3B ;
+    --bs-btn-hover-bg: #503B3B;
+}
+
+.weight {
+  font-weight: bolder;
+}
+
+.navbar {
+  --bs-navbar-padding-y: 1rem;
+}
+
+/* navbar end */
+
+/* main loading page start*/
+.birdielogo {
+  width: 370px;
+}
+
+.mainlogoo {
+  height: 234px;
+}
+
+.cont {
+  width: fit-content;
+}
+
+.shop-now-btn {
+  color: #FFFBF7;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 3rem;
+  height: 96px;
+  width: 340px;
+  border-radius: 68px;
+background: linear-gradient(177deg, rgba(255, 251, 247, 0.30) 32.07%, rgba(255, 251, 247, 0.10) 121.12%);
+
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(10px);
+}
+/* main loading page end */
