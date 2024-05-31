@@ -33,7 +33,7 @@ svg {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: move 2.5s forwards cubic-bezier(.22,.4,.26,.95),  turn 1s forwards linear, turn-back 1s forwards linear;
-    animation-delay: 4.3s, 3.25s, 6.85s;
+    animation-delay: 2.3s, 1.25s, 4.85s;
 }
 
 .cls-3 {
@@ -54,7 +54,7 @@ svg {
     stroke-dashoffset: 500;
     mask-image: url(Main\ Logo\ SVG.svg);
     mask-size: 100% 100%;
-    animation: draw 3s linear forwards;
+    animation: draw 2s linear forwards;
 }
 
 .birds-container {
@@ -277,7 +277,6 @@ svg {
   color: #FFFBF7;
   font-size: 1.5rem;
   font-weight: bolder;
-  position: absolute;
   bottom: 3rem;
   height: 96px;
   width: 340px;
@@ -287,4 +286,25 @@ background: linear-gradient(177deg, rgba(255, 251, 247, 0.30) 32.07%, rgba(255, 
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 backdrop-filter: blur(10px);
 }
+
+.landing-page {
+  grid-template-rows: 1fr 6fr 2fr;
+  height: 100%;
+}
+
 /* main loading page end */
+
+/* main pg with info start */
+.bg-main {
+  background-color: #FFFBF7;
+}
+
+.animate__animated.delay {
+  animation-delay: 6s;
+}
+.svg-loading-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* main pg with info end */
