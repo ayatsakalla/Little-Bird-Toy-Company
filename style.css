@@ -222,12 +222,6 @@ svg {
   transform: scaleX(1);
 }
 
-@media only screen and (min-width: 992px) {
-  .dropdown-container {
-    position: absolute;
-  }
-}
-
 .border-radius {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
@@ -266,7 +260,7 @@ svg {
 }
 
 .mainlogoo {
-  height: 234px;
+  height: 100%;
 }
 
 .cont {
@@ -308,3 +302,12 @@ backdrop-filter: blur(10px);
 }
 
 /* main pg with info end */
+
+@media only screen and (min-width: 992px) {
+  .dropdown-container {
+    position: absolute;
+  }
+  .mainlogoo {
+    height: 234px;
+  }
+}
