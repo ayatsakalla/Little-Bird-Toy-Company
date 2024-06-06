@@ -10,7 +10,7 @@ const handleLeftClick = () => {
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
         nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
         
-  currentSlide.dataset.status = "after";
+  currentSlide.dataset.status = "inactive";
   
   nextSlide.dataset.status = "becoming-active-from-before";
   
@@ -26,7 +26,7 @@ const handleRightClick = () => {
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
         nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
   
-  currentSlide.dataset.status = "before";
+  currentSlide.dataset.status = "inactive";
   
   nextSlide.dataset.status = "becoming-active-from-after";
   

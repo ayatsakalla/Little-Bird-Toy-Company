@@ -1,5 +1,5 @@
 html,body {
-    background-color: #fe9553;
+    background-color: #FFFBF7;
     height:100%;
     width: 100%;
     overflow-x: hidden;
@@ -49,7 +49,7 @@ svg {
   }
 .cls-4 {
     fill: none;
-    stroke: #FFFBF7 ;
+    stroke: #FFFBF7;
     stroke-width: 4;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
@@ -132,7 +132,7 @@ svg {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: whitesmoke;
+    background: #FFFBF7;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -165,13 +165,13 @@ svg {
   .navbar-toggler.collapsed .top-bar {
     margin-top: -25px;
     transform: rotate(0deg);
-    background-color: whitesmoke;
+    background-color: #FFFBF7;
   }
   
   .navbar-toggler.collapsed .middle-bar{
     opacity: 1;
     filter: alpha(opacity=100);
-    background-color: whitesmoke;
+    background-color: #FFFBF7;
     right: 0;
     width: calc(100% * (2/3));
   }
@@ -179,7 +179,7 @@ svg {
   .navbar-toggler.collapsed .bottom-bar {
     margin-top: 25px;
     transform: rotate(0deg);
-    background-color: whitesmoke;
+    background-color: #FFFBF7;
     right: 0;
     width: calc(100% / 3);
   }
@@ -289,6 +289,7 @@ backdrop-filter: blur(10px);
 .landing-page {
   grid-template-rows: 1fr 6fr 2fr;
   height: 100%;
+  background-color: #fe9553;
 }
 
 /* main loading page end */
@@ -319,18 +320,18 @@ backdrop-filter: blur(10px);
 
 /* products start */
 .flexy {
-  flex-grow: 1;
   position: relative;
 }
 
 .flexy > article {
   display: grid;
   height: 100%;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
   position: absolute;
   left: 0px;
   top: 0px;
+  width: 100%;
 }
 
 .flexy > article > .article-section {
@@ -348,6 +349,7 @@ backdrop-filter: blur(10px);
 }
 
 .flexy > article[data-status="inactive"] {
-  transform: translateX(-100%);
+  transform: translateX(-200%);
 }
+
 /* products end */
