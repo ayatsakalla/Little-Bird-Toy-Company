@@ -24,6 +24,15 @@ html,body {
 .geliat {
   font-family: 'geliat';
 }
+
+@font-face {
+  font-family: 'inaptly';
+  src: url('InaptlyRegular-rgwxB.ttf')
+}
+
+.inaptly {
+  font-family: 'inaptly';
+}
 /* fonts end */
 
 /* loading screen start */
@@ -297,6 +306,10 @@ backdrop-filter: blur(10px);
 /* main pg with info start */
 .bg-main {
   background-color: #FFFBF7;
+}
+
+span {
+  font-size: 1.7rem;
 }
 
 .animate__animated.delay {
