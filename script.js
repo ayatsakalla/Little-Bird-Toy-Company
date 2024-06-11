@@ -125,7 +125,7 @@ function generateProductItems() {
               ${product.biography}
             </div>
             <div class="article-title-section article-section sugarspice">
-              PEEPEEPOOPOO
+              <h2>${product.productName}<h2>
             </div>
             <div class="article-nav-section article-section">
               <div class="row">
