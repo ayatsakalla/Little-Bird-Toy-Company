@@ -57,8 +57,8 @@
               </button>
             </form>
           </div>
-
-          <img src="shopping cart 1.svg" alt="" class="cart ms-2" />
+            <img src="shopping cart 1.svg" alt="" class="cart ms-2" id="cart-btn" style="z-index: 2"/>
+          
         </div>
       </nav>
       <!-- navbar end -->
@@ -100,11 +100,30 @@
       </g>
     </g>
   </svg>
+
   <!-- svg loading screen end -->
 
   <main>
+    <div class="cart-cont" id="cart-menu">
+      <div class="cart-nav d-flex">
+        <box-icon name='x-circle' size="md" class="x-icon ms-auto" id="close-icon"></box-icon>
+      </div>
+      <div class="cart-menu">
+        
+        <h1 class="text-center inaptly">Your Cart</h1>
+      </div>
+      <div class="cart-footer">
+        <div class="row m-0 justify-content-center">
+          <div class="col-8">
+           <button class="checkout-btn border-radius-2 geliat text-center">
+            Checkout
+          </button> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
     <div class="container-fluid bg-main">
-
       <h1 class="sugarspice text-center">About Us</h1>
 
       <!-- about us start -->
@@ -175,6 +194,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
+
+<!-- boxicon icons -->
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 
   <!-- javascript -->
   <script src="script.js"></script>

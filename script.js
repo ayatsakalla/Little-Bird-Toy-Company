@@ -59,7 +59,8 @@ const productItems = [
                   <div class="carousel-item">
                     <img src="..." class="d-block w-100 img-fluid" alt="..." />
                   </div>
-                </div>`
+                </div>`,
+    price: "$18.99"
   } , 
   {
     productName: 'Wooden Train Set',
@@ -77,7 +78,8 @@ const productItems = [
                   <div class="carousel-item">
                     <img src="..." class="d-block w-100 img-fluid" alt="..." />
                   </div>
-                </div>`
+                </div>`,
+    price: "$29.99"
   } ,
   {
     productName: 'Wooden Boat',
@@ -95,7 +97,8 @@ const productItems = [
                   <div class="carousel-item">
                     <img src="..." class="d-block w-100 img-fluid" alt="..." />
                   </div>
-                </div>`
+                </div>`,
+    price: "$14.99"
   } ,
   {
     productName: 'Wooden Block Set',
@@ -113,7 +116,8 @@ const productItems = [
                   <div class="carousel-item">
                     <img src="..." class="d-block w-100 img-fluid" alt="..." />
                   </div>
-                </div>`
+                </div>`,
+      price: "$29.99"
   } ,
   {
     productName: 'Wooden Car',
@@ -131,7 +135,8 @@ const productItems = [
                   <div class="carousel-item">
                     <img src="..." class="d-block w-100 img-fluid" alt="..." />
                   </div>
-                </div>`
+                </div>`,
+    price: "$19.99"
   }
 ]
 
@@ -195,6 +200,21 @@ function generateProductItems() {
 
 
 // objects end
+
+//cart 
+const cartBtn = document.querySelector("#cart-btn");
+const cartMenu = document.querySelector("#cart-menu");
+const closeBtn = document.querySelector('#close-icon')
+function showCart() {
+  cartMenu.classList.add("show")
+}
+
+function hideCart() {
+  cartMenu.classList.remove("show")
+}
+
+closeBtn.addEventListener('click', hideCart)
+cartBtn.addEventListener('click', showCart);
 
 // products carousel end
 
