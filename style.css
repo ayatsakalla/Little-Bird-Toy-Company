@@ -511,7 +511,10 @@ hr {
 
 /* contact us start */
 .margin {
-  margin-top: 35rem;
   color: #fe9553;
 }
 /* contact us end */
+
+footer {
+  background-color: #fe9553;
+}

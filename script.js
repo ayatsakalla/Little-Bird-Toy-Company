@@ -4,7 +4,30 @@
 
 let activeIndex = 0;
 
+let height = "";
+let imageHeight = '';
+let titleHeight = ''
+
+let sussy = document.querySelector(`[data-index="${activeIndex}"]`);
+
+console.log(sussy)
+
+
+window.onresize = resize()
+
+
+function resize() {
+  
+  height = imageHeight + titleHeight;
+
+  productContainer.style.height = height + 'px';
+}
+
 const slides = document.getElementsByTagName("article");
+
+// changing height of the col based on the article
+
+const productContainer = document.querySelector('#productItems')
 
 const handleLeftClick = () => {
   const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
@@ -12,6 +35,12 @@ const handleLeftClick = () => {
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
     nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
 
+  imageHeight =  nextSlide.getElementsByClassName('article-image-section')[0].offsetHeight;
+  titleHeight = nextSlide.getElementsByClassName('article-title-section')[0].offsetHeight;
+  console.log(nextSlide)
+  height = imageHeight + titleHeight;
+  console.log(height)
+  resize();
   currentSlide.dataset.status = "inactive";
 
   nextSlide.dataset.status = "becoming-active-from-before";
@@ -28,6 +57,13 @@ const handleRightClick = () => {
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
     nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
 
+    imageHeight = nextSlide.getElementsByClassName('article-image-section')[0].offsetHeight;
+    titleHeight = nextSlide.getElementsByClassName('article-title-section')[0].offsetHeight;
+    console.log(nextSlide)
+    
+    height = imageHeight + titleHeight;
+    console.log(height)
+    resize();
   currentSlide.dataset.status = "inactive";
 
   nextSlide.dataset.status = "becoming-active-from-after";
@@ -349,9 +385,15 @@ function addToCart(product) {
   console.log(cartList);
 
   let cartItem = document.createElement("li");
-  let cartItemsNames = 
+  let cartItemsNames = document.getElementsByClassName('cart-item-title');
+  for (let i = 0; i < cartItemsNames.length; i++) {
+    if (cartItemsNames[i].innerText == product.productName ) {
+      alert('This item is already in your cart.')
+      return
+    }
+  }
   cartItem.innerHTML = ` <div class="item-details">
-    <h5 class="m-0">${product.productName}</h5>
+    <h5 class="m-0 cart-item-title">${product.productName}</h5>
     <input class="cart-quantity-input" type="number" value="1" min="1" max="99">
     <box-icon name='x' class="x-icon remove"></box-icon>
   </div>
@@ -429,10 +471,5 @@ let testimonialsArray = ["Little Bird Toy Company makes the most charming wooden
 let randomNumber = Math.floor(Math.random()*testimonialsArray.length); //generates a random integer for how many quotes put and assigning it to the variable random number
 
 document.getElementById('testimonial').textContent = '“' + testimonialsArray[randomNumber].split(' — ')[0] + ' ” ' + testimonialsArray[randomNumber].split(' — ')[1];
-
-
-
-
-
 
 // testimonials end
