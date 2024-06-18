@@ -261,6 +261,41 @@ function generateProductItems() {
 // objects end
 
 //cart
+
+document.addEventListener("DOMContentLoaded", function () {
+  generateProductItems();
+  ready();
+  loadCartItems();
+});
+
+let ul = document.querySelector('#list');
+let cartItemsHTML = localStorage.getItem('cartItems');
+
+function loadCartItems() {
+  if (cartItemsHTML) {
+      ul.innerHTML = cartItemsHTML;
+
+      // Reattach event listeners to new remove buttons
+      let removeFromCartBtns = document.getElementsByClassName("remove");
+      for (let i = 0; i < removeFromCartBtns.length; i++) {
+          let button = removeFromCartBtns[i];
+          button.addEventListener("click", removeFromCart);
+      }
+
+      let quantityInputs = document.getElementsByClassName("cart-quantity-input");
+      for (let i = 0; i < quantityInputs.length; i++) {
+          let input = quantityInputs[i];
+          input.addEventListener("change", quantityChanged);
+      }
+
+      updateCartTotal(); // Update cart total after loading items
+      console.log('Loaded cart items from localStorage:', cartItemsHTML);
+  } else {
+    console.log('you got nothing jit')
+  }
+}
+
+
 const cartBtn = document.querySelector("#cart-btn");
 const cartMenu = document.querySelector("#cart-menu");
 const closeBtn = document.querySelector("#close-icon");
@@ -274,10 +309,7 @@ function hideCart() {
 closeBtn.addEventListener("click", hideCart);
 cartBtn.addEventListener("click", showCart);
 
-document.addEventListener("DOMContentLoaded", function () {
-  generateProductItems();
-  ready();
-});
+
 
 function ready() {
   let addToCartButtons = document.getElementsByClassName("addToCartBtn");
@@ -309,6 +341,7 @@ function addToCartClicked(event) {
   let product = productItems[productNumber];
 
   addToCart(product);
+  localStorage.setItem('cartItems', ul.innerHTML);
 }
 
 function addToCart(product) {
@@ -316,6 +349,7 @@ function addToCart(product) {
   console.log(cartList);
 
   let cartItem = document.createElement("li");
+  let cartItemsNames = 
   cartItem.innerHTML = ` <div class="item-details">
     <h5 class="m-0">${product.productName}</h5>
     <input class="cart-quantity-input" type="number" value="1" min="1" max="99">
@@ -341,7 +375,9 @@ function quantityChanged(event) {
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1 
   }
+  input.setAttribute('value', input.value);
   updateCartTotal();
+  localStorage.setItem('cartItems', ul.innerHTML);
 }
 
 function removeFromCart() {
@@ -349,6 +385,7 @@ function removeFromCart() {
   let parent = button.closest("li");
   parent.remove();
   updateCartTotal();
+  localStorage.setItem('cartItems', ul.innerHTML);
 }
 
 function updateCartTotal() {
@@ -369,4 +406,33 @@ function updateCartTotal() {
   total = Math.round(total * 100) / 100
   document.querySelector('.price-total').innerText = '$' + total;
 }
+
+
 // products carousel end
+
+// testimonials start
+
+let testimonialsArray = ["Little Bird Toy Company makes the most charming wooden toys! Each piece feels crafted with love and attention to detail. My kids absolutely adore their toys. — Oprah Winfrey",
+
+"I love supporting local businesses, especially when their products are as wonderful as those from Little Bird Toy Company. The wooden toys are not only beautiful but also durable. — Lebron James",
+
+"Shopping at Little Bird Toy Company is always a delightful experience. The staff is friendly and knowledgeable, and they genuinely care about their customers. — Elon Musk",
+
+"As a parent, safety is my top concern when choosing toys for my children. Little Bird Toy Company's products are made from high-quality wood and are completely safe for my little ones. — Michelle Obama",
+
+"Little Bird Toy Company has become my go-to for gifts. Whether it's a birthday or holiday, I know I can find a unique and special toy that will bring joy to any child. — Serena Williams",
+
+"I appreciate the eco-friendly approach of Little Bird Toy Company. Their commitment to using sustainable materials makes me feel good about purchasing their toys. — Emma Watson",
+
+"The craftsmanship of Little Bird Toy Company's toys is outstanding. You can tell each piece is made with precision and care. — Theo Von"];
+
+let randomNumber = Math.floor(Math.random()*testimonialsArray.length); //generates a random integer for how many quotes put and assigning it to the variable random number
+
+document.getElementById('testimonial').textContent = '“' + testimonialsArray[randomNumber].split(' — ')[0] + ' ” ' + testimonialsArray[randomNumber].split(' — ')[1];
+
+
+
+
+
+
+// testimonials end

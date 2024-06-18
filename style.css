@@ -495,3 +495,23 @@ hr {
     font-size: 3.5vw;
   }
 }
+
+/* testimonial start */
+#testimonial {
+  /* font-style: italic; */
+  font-size: 1.7rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 1.8rem 0;
+  border-left: 4px solid #fe9553;
+  padding-left: 1em;
+  font-family: 'inaptly';
+}
+/* testimonial end */
+
+/* contact us start */
+.margin {
+  margin-top: 35rem;
+  color: #fe9553;
+}
+/* contact us end */
