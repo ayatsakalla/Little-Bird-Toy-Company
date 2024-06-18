@@ -4,30 +4,25 @@
 
 let activeIndex = 0;
 
-let height = "";
+let height =  600;
 let imageHeight = '';
 let titleHeight = ''
 
-let sussy = document.querySelector(`[data-index="${activeIndex}"]`);
 
-console.log(sussy)
-
-
-window.onresize = resize()
-
-
-function resize() {
-  
-  height = imageHeight + titleHeight;
-
-  productContainer.style.height = height + 'px';
-}
-
-const slides = document.getElementsByTagName("article");
 
 // changing height of the col based on the article
 
 const productContainer = document.querySelector('#productItems')
+
+
+
+function resize() {
+  productContainer.style.height = height + 'px';
+}
+
+resize();
+
+const slides = document.getElementsByTagName("article");
 
 const handleLeftClick = () => {
   const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
