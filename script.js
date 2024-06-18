@@ -4,23 +4,21 @@
 
 let activeIndex = 0;
 
-let height =  600;
+let height =  '600';
 let imageHeight = '';
 let titleHeight = ''
 
-
+let currentSlide = '';
 
 // changing height of the col based on the article
 
 const productContainer = document.querySelector('#productItems')
 
-
-
 function resize() {
   productContainer.style.height = height + 'px';
 }
 
-resize();
+
 
 const slides = document.getElementsByTagName("article");
 
@@ -32,7 +30,6 @@ const handleLeftClick = () => {
 
   imageHeight =  nextSlide.getElementsByClassName('article-image-section')[0].offsetHeight;
   titleHeight = nextSlide.getElementsByClassName('article-title-section')[0].offsetHeight;
-  console.log(nextSlide)
   height = imageHeight + titleHeight;
   console.log(height)
   resize();
@@ -189,12 +186,6 @@ const productItems = [
       <img src="products/block/blockTwo.png" class="d-block w-100 img-fluid" />
     </div>
     <div class="carousel-item">
-      <img src="products/block/blockThree.png" class="d-block w-100 img-fluid" />
-    </div>
-    <div class="carousel-item">
-      <img src="products/block/blockFour.png" class="d-block w-100 img-fluid" />
-    </div>
-    <div class="carousel-item">
       <img src="products/block/blockFive.png" class="d-block w-100 img-fluid" />
     </div>
   </div>
@@ -253,7 +244,7 @@ function generateProductItems() {
     products.dataset.index = product.dataIndex;
     products.dataset.status = product.status;
     products.innerHTML = `
-    <div class="article-image-section article-section">
+    <div class="article-image-section article-section first-image">
     ${product.carousel}
             </div>
             <div class="article-description-section article-section geliat">
@@ -289,6 +280,17 @@ function generateProductItems() {
   });
 }
 
+function getSlideItems() {
+  currentSlide = document.querySelector(`[data-index="0"]`)
+ imageHeight = currentSlide.getElementsByClassName('first-image')[0].offsetHeight;
+ console.log(imageHeight)
+ titleHeight = currentSlide.getElementsByClassName('article-title-section')[0].offsetHeight;
+ console.log(titleHeight)
+ height = titleHeight + imageHeight;
+ resize();
+}
+
+
 // objects end
 
 //cart
@@ -297,6 +299,9 @@ document.addEventListener("DOMContentLoaded", function () {
   generateProductItems();
   ready();
   loadCartItems();
+  setTimeout(() => {
+    getSlideItems()
+  }, 100);
 });
 
 let ul = document.querySelector('#list');

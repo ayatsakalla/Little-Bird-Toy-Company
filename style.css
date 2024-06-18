@@ -417,6 +417,8 @@ backdrop-filter: blur(10px); */
   display: grid;
   grid-template-rows: 36px 7fr 1fr;
   z-index: 10;
+  border: 2px black solid;
+  border-right: none;
 }
 
 .cart-cont.show {
