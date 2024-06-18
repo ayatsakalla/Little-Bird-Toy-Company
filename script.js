@@ -8,171 +8,235 @@ const slides = document.getElementsByTagName("article");
 
 const handleLeftClick = () => {
   const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
-  
+
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
-        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
-        
+    nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
+
   currentSlide.dataset.status = "inactive";
-  
+
   nextSlide.dataset.status = "becoming-active-from-before";
-  
+
   setTimeout(() => {
     nextSlide.dataset.status = "active";
     activeIndex = nextIndex;
   });
-}
+};
 
 const handleRightClick = () => {
   const nextIndex = activeIndex + 1 <= slides.length - 1 ? activeIndex + 1 : 0;
-  
+
   const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
-        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
-  
+    nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
+
   currentSlide.dataset.status = "inactive";
-  
+
   nextSlide.dataset.status = "becoming-active-from-after";
-  
+
   setTimeout(() => {
     nextSlide.dataset.status = "active";
     activeIndex = nextIndex;
   });
-}
-
+};
 
 // carousel navigation end
 
 // objects start
 const productItems = [
   {
-    productName: 'Wooden Airplane',
-    age: 'Toddlers',
-    biography: 'Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.' ,
-    dataIndex: '0',
-    status: 'active',
-    carousel: `<div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                </div>`,
-    price: "$18.99"
-  } , 
+    productName: "Wooden Airplane",
+    age: "Toddlers",
+    biography:
+      'Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.',
+    dataIndex: "0",
+    status: "active",
+    carousel: `<div id="carouselExampleOne" class="carousel slide">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="products/airplane/planeOne.png" class="d-block w-100 img-fluid"/>
+    </div>
+    <div class="carousel-item">
+      <img src="products/airplane/planeTwo.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/airplane/planeThree.png" class="d-block w-100 img-fluid"/>
+    </div>
+  </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleOne" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleOne" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>`
+    ,
+    price: "$18.99",
+  },
   {
-    productName: 'Wooden Train Set',
-    age: '3+', 
-    biography: 'Embark on a charming journey with this beautiful handcrafted wooden train set. Engine and three interchangeable cars boast intricate details made from real beech wood. Large size (84cm L x 11cm H x 13cm W) with moving wheels and a fully ecological design.' , 
-    dataIndex: '1',
-    status: 'inactive',
-    carousel: `<div class="carousel-inner">
+    productName: "Wooden Train Set",
+    age: "3+",
+    biography:
+      "Embark on a charming journey with this beautiful handcrafted wooden train set. Engine and three interchangeable cars boast intricate details made from real beech wood. Large size (84cm L x 11cm H x 13cm W) with moving wheels and a fully ecological design.",
+    dataIndex: "1",
+    status: "inactive",
+    carousel: `<div id="carouselExampleTwo" class="carousel slide">
+    <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
+                    <img src="products/train/trainOne.png" class="d-block w-100 img-fluid" />
                   </div>
                   <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
+                    <img src="products/train/trainTwo.png" class="d-block w-100 img-fluid" />
                   </div>
                   <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
+                    <img src="products/train/trainThree.png" class="d-block w-100 img-fluid"/>
                   </div>
-                </div>`,
-    price: "$29.99"
-  } ,
+                  <div class="carousel-item">
+                    <img src="products/train/trainFour.png" class="d-block w-100 img-fluid"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="products/train/trainFive.png" class="d-block w-100 img-fluid"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="products/train/trainSix.png" class="d-block w-100 img-fluid"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="products/train/trainSeven.png" class="d-block w-100 img-fluid"/>
+                  </div>
+                </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleTwo" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleTwo" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>`,
+    price: "$29.99",
+  },
   {
-    productName: 'Wooden Boat',
-    age: 'All Ages' ,
-    biography: ' Set sail for bathtub adventures with this adorable wooden boat. Made from solid Maine white pine, this handcrafted toy floats and features rounded edges for safety. Includes two peg "lobster people." Size: 10.5"W x 3.5"H.' ,
-    dataIndex: '2',
-    status: 'inactive',
-    carousel: `<div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                </div>`,
-    price: "$14.99"
-  } ,
+    productName: "Wooden Boat",
+    age: "All Ages",
+    biography:
+      ' Set sail for bathtub adventures with this adorable wooden boat. Made from solid Maine white pine, this handcrafted toy floats and features rounded edges for safety. Includes two peg "lobster people." Size: 10.5"W x 3.5"H.',
+    dataIndex: "2",
+    status: "inactive",
+    carousel: `<div id="carouselExampleThree" class="carousel slide">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="products/boat/boatOne.png" class="d-block w-100 img-fluid"/>
+    </div>
+    <div class="carousel-item">
+      <img src="products/boat/boatTwo.png" class="d-block w-100 img-fluid" />
+    </div>
+  </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleThree" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleThree" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>`,
+    price: "$14.99",
+  },
   {
-    productName: 'Wooden Block Set',
-    age: '3+',
-    biography: 'Build creativity and imagination with this high-quality, 72-piece block set. Made from naturally finished and smooth-sanded hardwood blocks, this set comes in a convenient wooden storage crate (13” L x 12” W x 2” H).' ,
-    dataIndex: '3',
-    status: 'inactive',
-    carousel: `<div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                </div>`,
-      price: "$29.99"
-  } ,
+    productName: "Wooden Block Set",
+    age: "3+",
+    biography:
+      "Build creativity and imagination with this high-quality, 72-piece block set. Made from naturally finished and smooth-sanded hardwood blocks, this set comes in a convenient wooden storage crate (13” L x 12” W x 2” H).",
+    dataIndex: "3",
+    status: "inactive",
+    carousel: `<div id="carouselExampleFour" class="carousel slide">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="products/block/blockOne.png" class="d-block w-100 img-fluid"/>
+    </div>
+    <div class="carousel-item">
+      <img src="products/block/blockTwo.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/block/blockThree.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/block/blockFour.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/block/blockFive.png" class="d-block w-100 img-fluid" />
+    </div>
+  </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFour" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFour" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>`,
+    price: "$29.99",
+  },
   {
-    productName: 'Wooden Car',
-    age: 'All Ages',
-    biography: 'This heirloom-quality wooden car is a timeless treasure. Handcrafted from domestic and exotic hardwoods with a clear lacquer finish, this unique car will inspire generations of imaginative play. Please note potential choking hazards for small children.', 
-    dataIndex: '4',
-    status: 'inactive',
-    carousel: `<div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100 img-fluid" alt="..." />
-                  </div>
-                </div>`,
-    price: "$19.99"
-  }
-]
+    productName: "Wooden Car",
+    age: "All Ages",
+    biography:
+      "This heirloom-quality wooden car is a timeless treasure. Handcrafted from domestic and exotic hardwoods with a clear lacquer finish, this unique car will inspire generations of imaginative play. Please note potential choking hazards for small children.",
+    dataIndex: "4",
+    status: "inactive",
+    carousel: `<div id="carouselExampleFive" class="carousel slide">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="products/car/carOne.png" class="d-block w-100 img-fluid"/>
+    </div>
+    <div class="carousel-item">
+      <img src="products/car/carTwo.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/car/carThree.png" class="d-block w-100 img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="products/car/carFour.png" class="d-block w-100 img-fluid" />
+    </div>
+  </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFive" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFive" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>`,
+    price: "$19.99",
+  },
+];
 
 function generateProductItems() {
-  const productContainer = document.querySelector('#productItems')
+  const productContainer = document.querySelector("#productItems");
 
-  productItems.forEach(product => {
-    const products = document.createElement('article')
+  productItems.forEach((product) => {
+    const products = document.createElement("article");
+    products.classList.add("skibidi");
     products.dataset.index = product.dataIndex;
-    products.dataset.status = product.status
+    products.dataset.status = product.status;
     products.innerHTML = `
     <div class="article-image-section article-section">
-              <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                </div>
-                ${product.carousel}
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+    ${product.carousel}
             </div>
             <div class="article-description-section article-section geliat">
-             <p>${product.biography}</p>
+             <p class="text-center m-2 font-sizeee">${product.biography} <br> ${product.price}</p>
+             <div class="row d-flex align-items-center justify-content-center">
+             <div class="cont d-flex justify-content-center align-items-center">
+               <div class="col-4 d-flex justify-content-center align-items-center w-100">
+                 <button class="products-btn border-radius-2 geliat text-center addToCartBtn">
+                   BUY NOW
+                 </button>
+               </div>
+             </div>
+           </div>
+         </div>
             </div>
             <div class="article-title-section article-section inaptly">
               <h2>${product.productName}<h2>
@@ -188,34 +252,121 @@ function generateProductItems() {
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABHElEQVR4nO3VXSsEYRjG8V9O2F1aJFtCZK3yduBLO3FEhPWShCQ5EErylvcvsZq61batk5nZs70O/9P8r3memfsZukmRMWxivIWvYA1FGbOKBh4wGawH18H3s5aUcRayF8wEn8Vb8COUspachuy1peQ9eB2FLCXJEx42lVSD15pKdvMoOQjZJ+Y7UVLEXsi+sBB8Dh/Bd9CXtaQesm8sdaKkFxsh+8Fym5LtLCWF2O/WVdTyWEWxaYuS97AYvJrHZ1v650tKpvwp+HHawSvjpM0sTOAxeHK9P88jYzzOqUZM+0Aa+SDOQ/KM6eAV3Aa/xFAaeXLTRUjum47tUdwEv8KwlFkPyV38G/6ylYc8yVTIKm14Uj6SRd6N1vwC8yldCRVxg7QAAAAASUVORK5CYII=" />
                 </button>
               </div>
-            </div>
-    
-    `
+            </div> `;
 
     productContainer.appendChild(products);
-
-  })
+  });
 }
-
-
 
 // objects end
 
-//cart 
+//cart
 const cartBtn = document.querySelector("#cart-btn");
 const cartMenu = document.querySelector("#cart-menu");
-const closeBtn = document.querySelector('#close-icon')
+const closeBtn = document.querySelector("#close-icon");
 function showCart() {
-  cartMenu.classList.add("show")
+  cartMenu.classList.add("show");
 }
 
 function hideCart() {
-  cartMenu.classList.remove("show")
+  cartMenu.classList.remove("show");
+}
+closeBtn.addEventListener("click", hideCart);
+cartBtn.addEventListener("click", showCart);
+
+document.addEventListener("DOMContentLoaded", function () {
+  generateProductItems();
+  ready();
+});
+
+function ready() {
+  let addToCartButtons = document.getElementsByClassName("addToCartBtn");
+
+  for (let i = 0; i < addToCartButtons.length; i++) {
+    let button = addToCartButtons[i];
+    button.addEventListener("click", addToCartClicked);
+  }
+
+  let removeFromCartBtns = document.getElementsByClassName("remove");
+
+  for (let i = 0; i < removeFromCartBtns.length; i++) {
+    let button = removeFromCartBtns[i];
+    button.addEventListener("click", removeFromCart);
+  }
+
+  let quantityInputs = document.getElementsByClassName("cart-quantity-input");
+
+  for (let i = 0; i < quantityInputs.length; i++) {
+    let input = quantityInputs[i];
+    input.addEventListener("change", quantityChanged);
+  }
 }
 
-closeBtn.addEventListener('click', hideCart)
-cartBtn.addEventListener('click', showCart);
+function addToCartClicked(event) {
+  let button = event.target;
+  let shopItem = button.closest(".skibidi");
+  let productNumber = shopItem.dataset.index;
+  let product = productItems[productNumber];
 
+  addToCart(product);
+}
+
+function addToCart(product) {
+  let cartList = document.querySelector("#list");
+  console.log(cartList);
+
+  let cartItem = document.createElement("li");
+  cartItem.innerHTML = ` <div class="item-details">
+    <h5 class="m-0">${product.productName}</h5>
+    <input class="cart-quantity-input" type="number" value="1" min="1" max="99">
+    <box-icon name='x' class="x-icon remove"></box-icon>
+  </div>
+  <div class="item-price">
+    <p>${product.price}</p>
+  </div> `;
+
+  cartList.appendChild(cartItem);
+  cartItem
+    .getElementsByClassName("remove")[0]
+    .addEventListener("click", removeFromCart);
+    cartItem
+    .getElementsByClassName("cart-quantity-input")[0]
+    .addEventListener("click", quantityChanged);
+  updateCartTotal();
+}
+
+function quantityChanged(event) {
+  console.log('changed')
+  let input = event.target
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value = 1 
+  }
+  updateCartTotal();
+}
+
+function removeFromCart() {
+  let button = event.target;
+  let parent = button.closest("li");
+  parent.remove();
+  updateCartTotal();
+}
+
+function updateCartTotal() {
+  let cartItemContainer = document.querySelector('#list');
+  let cartItems = cartItemContainer.getElementsByTagName('li');
+  let total = 0;
+  console.log(cartItems)
+  for (let i = 0; i < cartItems.length; i++) {
+    let cartItem = cartItems[i];
+    console.log(cartItem)
+    let priceElement = cartItem.querySelectorAll('.item-price')[0];
+    let quantityElement = cartItem.querySelectorAll('.cart-quantity-input')[0];
+    console.log(priceElement)
+    let price = parseFloat(priceElement.getElementsByTagName('p')[0].innerText.replace("$", ''));
+    let quantity = quantityElement.value;
+    total = total + (price* quantity)
+  }
+  total = Math.round(total * 100) / 100
+  document.querySelector('.price-total').innerText = '$' + total;
+}
 // products carousel end
-
-window.onload = generateProductItems;
